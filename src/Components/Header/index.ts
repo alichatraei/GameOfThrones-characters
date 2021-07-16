@@ -1,2 +1,3 @@
 import Logo from "./Logo/Logo";
-export { Logo };
+import SearchInput from "./SearchInput/SearchInput";
+export { Logo, SearchInput };

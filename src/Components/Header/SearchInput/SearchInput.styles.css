@@ -1,0 +1,7 @@
+.inputSearch input {
+  border-radius: 8px;
+  width: 60vw;
+  padding: 1rem 0.5rem;
+  outline: none;
+  caret-color: purple;
+}
