@@ -16,6 +16,7 @@ interface IData {
 function App() {
   const [data, setData] = useState<IData[]>([]);
   const [loaded, setIsLoaded] = useState<boolean>(false);
+  const [filterText, setFilterText] = useState<string>("");
   useEffect(() => {
     const getDataFromAPI = async () => {
       axios
@@ -25,7 +26,7 @@ function App() {
           setIsLoaded(true);
         })
         .catch((error) => {
-          alert("error");
+          alert(error);
         });
     };
     getDataFromAPI();
@@ -33,19 +34,22 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-
+      <Header filterText={filterText} setFilterText={setFilterText} />
       {loaded ? (
         <CardsContainer>
-          {data.map((item) => (
-            <CardItem
-              key={item.id}
-              fullName={item.fullName}
-              title={item.title}
-              family={item.family}
-              imageURL={item.imageUrl}
-            />
-          ))}
+          {data
+            .filter((item) =>
+              item.fullName.toLowerCase().includes(filterText.toLowerCase())
+            )
+            .map((item) => (
+              <CardItem
+                key={item.id}
+                fullName={item.fullName}
+                title={item.title}
+                family={item.family}
+                imageURL={item.imageUrl}
+              />
+            ))}
         </CardsContainer>
       ) : (
         <div className="loadingSpinner">

@@ -1,11 +1,11 @@
 import React from "react";
 import { Logo, SearchInput } from "./";
 import "./Header.styles.css";
-const Header = () => {
+const Header = ({ filterText, setFilterText }: any) => {
   return (
     <div className="headerContainer">
       <Logo />
-      <SearchInput />
+      <SearchInput filterText={filterText} setFilterText={setFilterText} />
     </div>
   );
 };
