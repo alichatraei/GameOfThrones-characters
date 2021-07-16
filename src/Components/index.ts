@@ -1,2 +1,4 @@
 import Header from "./Header/Header";
-export { Header };
+import CardsContainer from "./CardsContainer/CardsContainer";
+import CardItem from "./CardItem/CardItem";
+export { Header, CardsContainer, CardItem };
