@@ -1,0 +1,32 @@
+.cardItem {
+  width: 20rem;
+  height: 25rem;
+  background-color: transparent;
+  border-radius: 1rem;
+  perspective: 1000px;
+}
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.cardItem:hover .cardInner {
+  transform: rotateY(180deg);
+}
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.cardFront img {
+  width: 100%;
+  height: 100%;
+}
+.cardBack {
+  background-color: #000012;
+  transform: rotateY(180deg);
+}
