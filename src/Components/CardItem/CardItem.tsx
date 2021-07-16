@@ -21,10 +21,13 @@ const CardItem: React.FC<IItemInfo> = ({
           <img src={imageURL} alt={fullName} title={fullName} />
         </div>
         <div className="cardBack">
-          <h2 id="cardItemCharacterName">{fullName}</h2>
+          <h2 id="cardItemCharacterName">
+            Fullname: <br />
+            {fullName}
+          </h2>
           <hr />
-          <h4 id="cardItemTitle">{title}</h4>
-          <h4 id="cardItemFamily">{family}</h4>
+          <h4 id="cardItemTitle">Title: {title}</h4>
+          <h4 id="cardItemFamily">Family: {family}</h4>
         </div>
       </div>
     </div>

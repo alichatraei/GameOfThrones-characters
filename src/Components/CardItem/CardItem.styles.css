@@ -4,6 +4,7 @@
   background-color: transparent;
   perspective: 1000px;
   margin: 1rem;
+  cursor: pointer;
 }
 .cardInner {
   position: relative;
@@ -29,8 +30,20 @@
 .cardFront img {
   width: 100%;
   height: 100%;
+  border-radius: 1rem;
 }
 .cardBack {
   background-color: #4a4a4a;
   transform: rotateY(180deg);
+}
+hr {
+  width: 100%;
+}
+.cardBack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
